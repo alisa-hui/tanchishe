@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>贪吃蛇</title>
+</head>
+<script src="function.js"></script>
+<script src="animate.js"></script>
+<script src="tanchishe.js"></script>
+<style>
+    #box{
+		width:600px;
+		height:400px;
+		position:relative;
+        margin:50px auto;
+		border:1px solid #ccc;
+        background: url(bg1.jpg) no-repeat;
+        background-size: 100%,100%;
+		
+	}
+	.big-box{
+		width:400px;
+		height:100%;	
+		overflow: hidden;	
+		position:absolute;
+		left:0px;
+		top:0px;
+		background:pink;
+	}
+	.jf-box{
+		width:200px;
+		height:100%;	
+		background-color: #ffaaff;		
+		position:absolute;
+		left:400px;
+		top:0px;
+	}
+	.big-box div{
+		width:20px;
+		height:20px;
+		float:left;
+	}
+	.sck{
+		width:200px;
+		height:120px;
+		text-align: center;
+		line-height:120px;
+		font-size: 24px;
+		color:#8e8e51;
+		background-color:rgba(200,150,100,0.8);
+		border: 3px solid rgba(100,100,10,0.2);
+         position:absolute;
+         left:100px;
+         top:80px;
+         display:none;
+	}
+	.she{
+		background:#fff;
+		opacity:0.6;
+		border-radius:8px;
+		background-image:url(shetou.png) no-repeat;
+	}
+	.food{
+		width:20px;
+		height:20px;
+		border-radius:4px;
+		background-image:url(mianbao.jpg);
+		background-size:20px 20px;
+	}
+	.scores{
+			width: 150px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			font-size: 18px;
+			color:#8e8e51;
+			background-color: #fff;
+			border: 3px solid rgba(200,100,10,0.4);
+			margin: 10px auto 30px;
+		}
+		.btn{
+			width: 150px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			font-size: 18px;
+			background-color: #ffaabb;
+			border: 3px solid #ffaaab;
+			border-radius: 20px;
+			color:#8e8e51;
+			margin: 0 auto;margin-top: 30px;
+			cursor: pointer;
+		}
+		.name{
+			width: 100%;
+			text-align: center;
+			font-size: 16px;
+			color:#8e8e51;
+			margin-top: 50px;
+		}
+</style>
+<body>
+    <div id="box">
+		<div class="big-box"></div>
+	    <div class="jf-box">
+	    	<div class="name">得 分</div>
+			<div class="score scores"></div>
+			<div class="start btn">开始</div>
+			<div class="stop btn">暂停</div>
+			<div class="end btn">结束</div>
+	    </div>
+	    <div  class="sck"></div>
+	</div>
+	
+</body>
+</html>
