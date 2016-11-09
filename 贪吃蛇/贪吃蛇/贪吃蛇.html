@@ -11,26 +11,33 @@
     #box{
 		width:600px;
 		height:400px;
-		position:relative;
-        margin:50px auto;
-		border:1px solid #ccc;
-        background: url(bg1.jpg) no-repeat;
+        margin:200px auto;
+        background: url(bg4.jpg) no-repeat;
         background-size: 100%,100%;
-		
+        box-shadow: 0 0 4px greenyellow;
+        opacity: 1;		
+	}
+	.zhezhao{
+		width:600px;
+		height:400px;
+		position:absolute;
+        left:374px;
+        top:200px;
+		/*background:#000;*/
+		overflow: hidden;
+		/*opacity: 0.4;*/
 	}
 	.big-box{
 		width:400px;
-		height:100%;	
+		height:400px;	
 		overflow: hidden;	
 		position:absolute;
 		left:0px;
 		top:0px;
-		background:pink;
 	}
 	.jf-box{
 		width:200px;
-		height:100%;	
-		background-color: #ffaaff;		
+		height:400px;	
 		position:absolute;
 		left:400px;
 		top:0px;
@@ -47,16 +54,16 @@
 		line-height:120px;
 		font-size: 24px;
 		color:#8e8e51;
-		background-color:rgba(200,150,100,0.8);
-		border: 3px solid rgba(100,100,10,0.2);
+		background-color:rgba(200,150,100);
+		border: 3px solid rgba(100,100,10);
          position:absolute;
          left:100px;
          top:80px;
          display:none;
 	}
 	.she{
-		background:#fff;
-		opacity:0.6;
+		background:green;
+		opacity:0.4;
 		border-radius:8px;
 		background-image:url(shetou.png) no-repeat;
 	}
@@ -73,9 +80,9 @@
 			text-align: center;
 			line-height: 30px;
 			font-size: 18px;
-			color:#8e8e51;
-			background-color: #fff;
-			border: 3px solid rgba(200,100,10,0.4);
+			color:#fff;
+			/*background-color: #fff;*/
+			border: 3px solid yellowgreen;
 			margin: 10px auto 30px;
 		}
 		.btn{
@@ -100,17 +107,17 @@
 		}
 </style>
 <body>
-    <div id="box">
-		<div class="big-box"></div>
-	    <div class="jf-box">
+    <div id="box"></div>
+	<div class="zhezhao">
+	    	<div class="big-box"></div>
+	        <div class="jf-box">
 	    	<div class="name">得 分</div>
 			<div class="score scores"></div>
 			<div class="start btn">开始</div>
 			<div class="stop btn">暂停</div>
 			<div class="end btn">结束</div>
-	    </div>
-	    <div  class="sck"></div>
+		    </div>
+		    <div  class="sck"></div>
 	</div>
-	
 </body>
 </html>
