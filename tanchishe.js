@@ -27,7 +27,8 @@ $(function(){
     	  var y=Math.floor(Math.random()*20);
     	}while(panduan(x,y))
     	var food=$("#"+x+"-"+y)
-    	food.className="food";
+    	food.style.backgroundImage='url(./mianbao.jpg)';
+        food.style.backgroundSize='20px 20px'
     	return{x:x,y:y};        
     }
     function panduan(a,b){
@@ -42,9 +43,10 @@ $(function(){
      //蛇运动
          var fx="you";
          function run(){
-        var jiutou=she[she.length-1];
-        if(fx=="you"){
-            var newtou=$("#"+jiutou.x+"-"+(jiutou.y+1));        
+           var  jiutou=she[she.length-1]; 
+           if(fx=="you"){
+            var newtou=$("#"+jiutou.x+"-"+(jiutou.y+1)); 
+            var jiutou1=$("#"+jiutou.x+"-"+(jiutou.y));
             if(newtou==null){
                 sck.style.display="block";
                 sck.innerHTML="呀，撞墙了!";
@@ -56,13 +58,17 @@ $(function(){
                 sck.innerHTML="呀，吃到自己了哟!";
                 clearInterval(t);
                 return;
-            }
+            }           
             newtou.className="she shetou";
-            jiutou.className="she";
+            jiutou.className="she";  
+            newtou.style.backgroundImage='url(./newheadl.png)'
+            jiutou1.style.backgroundImage='url(./shetou.png)' 
             she.push({x:jiutou.x,y:jiutou.y+1});
         }
         if(fx=="zuo"){
-            var newtou=$("#"+jiutou.x+"-"+(jiutou.y-1));            
+            var newtou=$("#"+jiutou.x+"-"+(jiutou.y-1)); 
+            var jiutou1=$("#"+jiutou.x+"-"+(jiutou.y));
+            jiutou=she[she.length-1];           
             if(newtou==null){
                 sck.style.display="block";
                 sck.innerHTML="呀，撞墙了!";
@@ -75,11 +81,16 @@ $(function(){
                 clearInterval(t);
                 return;
             }
+            
             newtou.className="she shetou";
+            newtou.style.backgroundImage='url(./newheadr.png)'
+            jiutou1.style.backgroundImage='url(./shetou.png)'
             she.push({x:jiutou.x,y:jiutou.y-1});
         }
         if(fx=="shang"){
-            var newtou=$("#"+(jiutou.x-1)+"-"+jiutou.y);        
+            var newtou=$("#"+(jiutou.x-1)+"-"+jiutou.y);
+             var jiutou1=$("#"+jiutou.x+"-"+(jiutou.y));
+            jiutou=she[she.length-1];        
             if(newtou==null){
                 sck.style.display="block";
                 sck.innerHTML="呀，撞墙了!";
@@ -93,10 +104,14 @@ $(function(){
                 return;
             }
             newtou.className="she shetou";
+            newtou.style.backgroundImage='url(./newheadx.png)'
+            jiutou1.style.backgroundImage='url(./shetou.png)'
             she.push({x:jiutou.x-1,y:jiutou.y});
         }
         if(fx=="xia"){
-            var newtou=$("#"+(jiutou.x+1)+"-"+jiutou.y);            
+            var newtou=$("#"+(jiutou.x+1)+"-"+jiutou.y); 
+            jiutou=she[she.length-1];
+             var jiutou1=$("#"+jiutou.x+"-"+(jiutou.y));           
             if(newtou==null){
                 sck.style.display="block";
                 sck.innerHTML="呀，撞墙了!";
@@ -110,6 +125,8 @@ $(function(){
                 return;
             }
             newtou.className="she shetou";
+             newtou.style.backgroundImage='url(./newheads.png)'
+            jiutou1.style.backgroundImage='url(./shetou.png)'
             she.push({x:jiutou.x+1,y:jiutou.y});
         }
         if(food.x==she[she.length-1].x&&food.y==she[she.length-1].y){ 
@@ -121,6 +138,7 @@ $(function(){
         }else{
             var shewei=$("#"+she[0].x+"-"+she[0].y);
             shewei.className="";
+            $("#"+she[0].x+"-"+she[0].y).style.backgroundImage='url()'
             she.shift();
         }       
      }     
